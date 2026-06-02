@@ -2,27 +2,46 @@
 import Layout from '../layouts/Layout.astro';
 
 const products = [
-  { name: "EasyAIAgents", role: "AI Automation", desc: "AI agents for business.", gradient: "from-purple-500 to-blue-500" },
-  { name: "Lumina", role: "Video Editor", desc: "Next-gen video suite.", gradient: "from-orange-400 to-rose-500" },
-  { name: "Max OS", role: "Operating System", desc: "Performance redefined.", gradient: "from-emerald-400 to-cyan-500" }
-];
-
-const socials = [
-  { name: 'Twitter', url: 'https://x.com/basixa', icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' }
+  { name: "EasyAIAgents", role: "AI Automation", desc: "AI-powered agents for creators.", gradient: "from-purple-600 to-blue-600" },
+  { name: "Lumina", role: "Video Editor", desc: "Modern Android video suite.", gradient: "from-rose-500 to-orange-500" },
+  { name: "Max OS", role: "Next-Gen Platforms", desc: "Next-generation computing.", gradient: "from-emerald-500 to-cyan-500" }
 ];
 ---
 
-<Layout title="BasiXa | Future of Software">
-	<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto text-white">
-		<h1 class="text-6xl font-black mb-8">Building the <span class="text-purple-500">Future</span>.</h1>
-		<div class="grid md:grid-cols-3 gap-8">
-			{products.map((p) => (
-				<div class="p-8 rounded-3xl border border-white/10 bg-white/5">
-					<div class={`w-10 h-10 rounded bg-gradient-to-br ${p.gradient} mb-4`}></div>
-					<h3 class="text-2xl font-bold">{p.name}</h3>
-					<p class="text-gray-400">{p.desc}</p>
+<Layout title="BasiXa | Building the Future of Software">
+	<main class="max-w-6xl mx-auto px-6 py-20">
+		<nav class="flex justify-between items-center mb-32">
+			<div class="text-2xl font-black tracking-tighter">BASIXA</div>
+			<a href="mailto:basixaofficial@gmail.com" class="bg-white text-black px-6 py-2 rounded-full font-bold text-sm">Contact</a>
+		</nav>
+
+		<header class="text-center mb-40">
+			<h1 class="text-7xl md:text-9xl font-black tracking-tighter mb-8 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+				Future of Software.
+			</h1>
+			<p class="text-xl text-gray-400 max-w-2xl mx-auto">
+				Independent technology company building AI, creative tools, and next-gen platforms. Founded by <b>Abdul Basit HS</b>.
+			</p>
+		</header>
+
+		<div class="grid md:grid-cols-3 gap-10 mb-40">
+			{products.map(p => (
+				<div class="bg-white/5 border border-white/10 p-10 rounded-[40px] hover:bg-white/10 transition">
+					<div class={`w-12 h-12 rounded-2xl bg-gradient-to-br ${p.gradient} mb-8 shadow-2xl`}></div>
+					<h3 class="text-2xl font-bold mb-2">{p.name}</h3>
+					<p class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-4">{p.role}</p>
+					<p class="text-gray-400 leading-relaxed">{p.desc}</p>
 				</div>
 			))}
 		</div>
+
+		<footer class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
+			<p class="text-gray-500 text-sm">© 2024 BasiXa. All rights reserved.</p>
+			<div class="flex gap-8 text-gray-400 font-bold text-sm uppercase tracking-widest">
+				<a href="https://x.com/basixa" class="hover:text-white transition">Twitter</a>
+				<a href="https://github.com/basixa" class="hover:text-white transition">GitHub</a>
+				<a href="https://instagram.com/basixa" class="hover:text-white transition">Instagram</a>
+			</div>
+		</footer>
 	</main>
 </Layout>
