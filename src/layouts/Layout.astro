@@ -3,26 +3,75 @@ interface Props { title: string; }
 const { title } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>B</text></svg>" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-		<title>{title}</title>
-	</head>
-	<body class="bg-[#050505] text-[#f5f5f5] font-['Inter'] antialiased selection:bg-indigo-500/30">
-		<!-- Background Sophisticated Glows -->
-		<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
-			<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-900/20 blur-[120px] rounded-full"></div>
-			<div class="absolute bottom-[0%] right-[0%] w-[40%] h-[40%] bg-purple-900/10 blur-[150px] rounded-full"></div>
-		</div>
-		<slot />
-	</body>
-</html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
 
-<style is:global>
-	html { scroll-behavior: smooth; }
-	::-webkit-scrollbar { width: 5px; }
-	::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
-</style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111'/><text x='16' y='22' font-size='18' text-anchor='middle' font-family='Georgia,serif' fill='white'>B</text></svg>" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style is:global>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --bg: #ffffff;
+        --bg2: #f7f7f5;
+        --surface: #f0efe9;
+        --border: #e5e4df;
+        --text: #1a1917;
+        --text2: #6b6a65;
+        --text3: #9b9a95;
+        --accent: #c96a2e;
+        --accent-hover: #a8551f;
+        --radius: 12px;
+        --radius-lg: 20px;
+      }
+
+      [data-theme="dark"] {
+        --bg: #111110;
+        --bg2: #191918;
+        --surface: #222220;
+        --border: #2e2e2c;
+        --text: #f0efe9;
+        --text2: #9b9a95;
+        --text3: #6b6a65;
+        --accent: #d4784a;
+        --accent-hover: #e8894f;
+      }
+
+      html { scroll-behavior: smooth; font-size: 16px; }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        transition: background 0.3s, color 0.3s;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      ::selection { background: var(--accent); color: #fff; }
+
+      a { color: inherit; text-decoration: none; }
+
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--bg); }
+      ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    </style>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      // Persist theme
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+  </body>
+</html>
