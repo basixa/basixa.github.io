@@ -4,119 +4,667 @@ import Layout from '../layouts/Layout.astro';
 const products = [
   {
     name: "EasyAIAgents",
-    tagline: "Autonomous Logic Engines",
-    desc: "Next-gen AI agents designed for complex reasoning and workflow automation. Built for scale.",
-    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200"
+    tag: "AI & Automation",
+    desc: "AI-powered agents and automation tools built for businesses, developers, and creators. Automate the repetitive, focus on what matters.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>`
   },
   {
     name: "Lumina",
-    tagline: "Visual Synthesis Suite",
-    desc: "A high-performance video engine that redefines mobile creativity with professional-grade processing.",
-    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200"
+    tag: "Creative Tools",
+    desc: "A modern Android video editor designed for fast, creative, and professional content creation — built for the creators of tomorrow.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`
   },
   {
     name: "Max OS",
-    tagline: "The Future of OS",
-    desc: "An experimental platform focused on performance, extreme compatibility, and deep AI integration.",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200"
+    tag: "Computing Platform",
+    desc: "A next-generation operating system focused on flexibility, performance, and broad application compatibility. Computing, reimagined.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`
+  }
+];
+
+const socials = [
+  {
+    name: "X (Twitter)",
+    href: "https://x.com/basixa",
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/basixa",
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>`
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/basixa",
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>`
+  },
+  {
+    name: "Email",
+    href: "mailto:basixaofficial@gmail.com",
+    icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>`
   }
 ];
 ---
 
-<Layout title="BasiXa | Building the Future">
-	<!-- Navbar -->
-	<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/40 backdrop-blur-xl">
-		<div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-			<div class="text-xl font-bold tracking-tighter uppercase">BasiXa</div>
-			<div class="flex gap-8 items-center text-xs font-bold uppercase tracking-widest text-neutral-400">
-				<a href="#products" class="hover:text-white transition">Products</a>
-				<a href="#ceo" class="hover:text-white transition">Leadership</a>
-				<a href="mailto:basixaofficial@gmail.com" class="text-white border border-white/20 px-4 py-2 rounded-full hover:bg-white hover:text-black transition duration-500">Inquire</a>
-			</div>
-		</div>
-	</nav>
+<Layout title="BasiXa — Building the Future of Software">
+<style>
+  /* ── THEME TOGGLE ── */
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text2);
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover { background: var(--surface); color: var(--text); border-color: var(--text3); }
+  .icon-sun, .icon-moon { display: none; }
+  [data-theme="light"] .icon-sun { display: block; }
+  [data-theme="dark"] .icon-moon { display: block; }
 
-	<main>
-		<!-- Hero Section -->
-		<section class="pt-48 pb-32 px-6 max-w-7xl mx-auto">
-			<div class="max-w-4xl">
-				<span class="text-indigo-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">Technology Research Lab</span>
-				<h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.95] mb-12">
-					Building the next generation of <span class="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent italic">intelligent systems.</span>
-				</h1>
-				<p class="text-xl md:text-2xl text-neutral-400 leading-relaxed max-w-2xl font-light">
-					BasiXa is an independent software lab developing high-performance AI tools and experimental platforms.
-				</p>
-			</div>
-		</section>
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .logo {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-links a {
+    color: var(--text2);
+    font-size: 0.875rem;
+    font-weight: 450;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--surface); }
+  .nav-btn {
+    background: var(--text) !important;
+    color: var(--bg) !important;
+    font-weight: 500 !important;
+    padding: 8px 18px !important;
+    border-radius: 8px !important;
+    font-size: 0.875rem !important;
+    transition: opacity 0.15s !important;
+  }
+  .nav-btn:hover { opacity: 0.8 !important; background: var(--text) !important; }
 
-		<!-- Product Section -->
-		<section id="products" class="py-32 px-6 max-w-7xl mx-auto border-t border-white/5">
-			<div class="grid gap-32">
-				{products.map((p, index) => (
-					<div class={`flex flex-col md:flex-row items-center gap-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-						<div class="md:w-1/2">
-							<h3 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">{p.name}</h3>
-							<p class="text-indigo-400 font-bold uppercase tracking-widest text-xs mb-4">{p.tagline}</p>
-							<p class="text-neutral-400 text-lg leading-relaxed mb-8">{p.desc}</p>
-							<div class="h-1 w-20 bg-indigo-500/50"></div>
-						</div>
-						<div class="md:w-1/2 rounded-[32px] overflow-hidden border border-white/10 group shadow-2xl shadow-indigo-500/5">
-							<img src={p.img} alt={p.name} class="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700" />
-						</div>
-					</div>
-				))}
-			</div>
-		</section>
+  /* ── WRAPPER ── */
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
 
-		<!-- CEO Section (Custom Image) -->
-		<section id="ceo" class="py-32 px-6 max-w-7xl mx-auto bg-white/[0.02] border-y border-white/5">
-			<div class="flex flex-col md:flex-row items-center gap-20">
-				<div class="md:w-2/5 relative">
-					<div class="absolute -inset-4 bg-indigo-500/20 blur-2xl rounded-full -z-10"></div>
-					<div class="rounded-[40px] overflow-hidden border border-white/10 rotate-2 hover:rotate-0 transition duration-500 shadow-2xl">
-						<!-- This uses the photo you provided -->
-						<img src="/ceo.jpg" alt="Abdul Basit HS" class="w-full aspect-[3/4] object-cover" />
-					</div>
-				</div>
-				<div class="md:w-3/5">
-					<span class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-6 block">Visionary Leadership</span>
-					<h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Abdul Basit HS</h2>
-					<p class="text-2xl text-neutral-300 leading-relaxed font-light italic mb-8">
-						"Our focus at BasiXa is to remove the barriers between human intuition and technical execution. We are building for the creative age."
-					</p>
-					<div class="flex gap-12 pt-8 border-t border-white/10">
-						<div>
-							<p class="text-sm font-bold uppercase tracking-widest text-indigo-400">Founder & CEO</p>
-							<p class="text-xs text-neutral-500">BasiXa Technologies</p>
-						</div>
-						<div class="flex gap-4">
-							<a href="https://x.com/basixa" class="text-xs font-bold border border-white/10 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Twitter</a>
-							<a href="https://github.com/basixa" class="text-xs font-bold border border-white/10 px-4 py-2 rounded-full hover:bg-white hover:text-black transition">GitHub</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+  /* ── HERO ── */
+  .hero {
+    padding: 120px 32px 100px;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; gap: 48px; padding: 72px 24px; }
+    .hero-visual { display: none; }
+  }
 
-		<!-- Final CTA -->
-		<section class="py-40 text-center px-6">
-			<h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Innovate without limits.</h2>
-			<a href="mailto:basixaofficial@gmail.com" class="px-12 py-5 bg-indigo-600 text-white rounded-full font-bold text-xl hover:bg-indigo-500 transition shadow-xl shadow-indigo-500/20">
-				Join the Ecosystem
-			</a>
-		</section>
-	</main>
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
 
-	<!-- Footer -->
-	<footer class="py-20 border-t border-white/5 px-6">
-		<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-600">
-			<p>© 2024 BASIXA LABS — ALL RIGHTS RESERVED</p>
-			<div class="flex gap-12">
-				<a href="https://x.com/basixa" class="hover:text-white transition">X.COM</a>
-				<a href="https://github.com/basixa" class="hover:text-white transition">GITHUB</a>
-				<a href="https://instagram.com/basixa" class="hover:text-white transition">INSTAGRAM</a>
-			</div>
-		</div>
-	</footer>
+  h1 {
+    font-size: clamp(2.6rem, 4vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 350;
+    max-width: 440px;
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--text);
+    color: var(--bg);
+    padding: 11px 24px;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: opacity 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { opacity: 0.75; }
+  .btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--text2);
+    padding: 11px 24px;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 450;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--text3); color: var(--text); background: var(--surface); }
+
+  /* Hero visual */
+  .hero-visual {
+    aspect-ratio: 1;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-visual-inner {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-visual-inner::before {
+    content: '';
+    position: absolute;
+    inset: -32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+  }
+  .hero-visual-inner::after {
+    content: '';
+    position: absolute;
+    inset: -64px;
+    border-radius: 50%;
+    border: 1px dashed var(--border);
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hero-logo-big {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--text);
+  }
+  .hero-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    top: -68px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: spin 20s linear infinite;
+    transform-origin: 50% 68px;
+  }
+
+  /* ── SECTION COMMONS ── */
+  .section { padding: 100px 0; border-top: 1px solid var(--border); }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 48px;
+  }
+
+  /* ── PRODUCTS ── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  @media (max-width: 900px) { .products-grid { grid-template-columns: 1fr; } }
+
+  .product-card {
+    background: var(--bg);
+    padding: 40px 36px;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .product-card:hover { background: var(--bg2); }
+
+  .product-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text2);
+    margin-bottom: 28px;
+  }
+  .product-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 10px;
+  }
+  .product-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .product-desc {
+    font-size: 0.875rem;
+    color: var(--text2);
+    line-height: 1.7;
+    font-weight: 350;
+  }
+  .product-arrow {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    color: var(--text3);
+    font-size: 1.1rem;
+    transition: transform 0.2s, color 0.2s;
+  }
+  .product-card:hover .product-arrow { transform: translate(3px, -3px); color: var(--text2); }
+
+  /* ── MISSION ── */
+  .mission-section { padding: 100px 0; border-top: 1px solid var(--border); }
+  .mission-text {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.35;
+    color: var(--text);
+    max-width: 760px;
+  }
+  .mission-text em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+  .about-text {
+    font-size: 1rem;
+    color: var(--text2);
+    line-height: 1.8;
+    font-weight: 350;
+  }
+  .about-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+  .about-sub { margin-bottom: 16px; }
+
+  .founder-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    position: sticky;
+    top: 88px;
+  }
+  .founder-initials {
+    width: 56px;
+    height: 56px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .founder-name-big {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .founder-title {
+    font-size: 0.8rem;
+    color: var(--text3);
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  .founder-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+  .socials-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 14px;
+  }
+  .socials-list { display: flex; flex-direction: column; gap: 4px; }
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text2);
+    font-size: 0.875rem;
+    font-weight: 450;
+    transition: background 0.15s, color 0.15s;
+  }
+  .social-link:hover { background: var(--surface); color: var(--text); }
+  .social-icon { flex-shrink: 0; color: var(--text3); transition: color 0.15s; }
+  .social-link:hover .social-icon { color: var(--text2); }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 768px) { .contact-section { grid-template-columns: 1fr; gap: 40px; } }
+  .contact-title { font-size: 2rem; font-weight: 500; letter-spacing: -0.025em; margin-bottom: 12px; }
+  .contact-sub { color: var(--text2); font-size: 0.95rem; line-height: 1.7; font-weight: 350; }
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--text);
+    color: var(--bg);
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.15s;
+  }
+  .contact-email:hover { opacity: 0.75; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+  }
+  .footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-left { display: flex; align-items: center; gap: 24px; }
+  .footer-logo { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+  .footer-copy { font-size: 0.78rem; color: var(--text3); }
+  .footer-socials { display: flex; gap: 4px; }
+  .footer-social-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text3);
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .footer-social-btn:hover { background: var(--surface); color: var(--text); }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.on { opacity: 1; transform: none; }
+  .reveal-d1 { transition-delay: 0.08s; }
+  .reveal-d2 { transition-delay: 0.16s; }
+  .reveal-d3 { transition-delay: 0.24s; }
+
+  /* Mobile nav */
+  @media (max-width: 600px) {
+    .nav-links .nav-mid { display: none; }
+    .hero { padding: 56px 24px 64px; }
+    .wrap { padding: 0 24px; }
+    .section { padding: 72px 0; }
+    .products-grid { border-radius: 12px; }
+  }
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">BasiXa</a>
+    <div class="nav-links">
+      <a href="#products" class="nav-mid">Products</a>
+      <a href="#about" class="nav-mid">About</a>
+      <a href="#contact" class="nav-btn">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <!-- Sun -->
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <!-- Moon -->
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Independent Technology</div>
+    <h1>Building the<br/>future of software.</h1>
+    <p class="hero-sub">
+      BasiXa develops AI agents, creative tools, and next-generation computing platforms — empowering creators, developers, and businesses worldwide.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Our Products</a>
+      <a href="#about" class="btn-ghost">About Us</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual-inner">
+      <span class="hero-logo-big">Bx</span>
+      <div class="hero-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="wrap">
+    <p class="section-label reveal">Our Products</p>
+    <div class="products-grid">
+      {products.map((p, i) => (
+        <div class={`product-card reveal reveal-d${i+1}`}>
+          <div class="product-icon" set:html={p.icon}></div>
+          <div class="product-tag">{p.tag}</div>
+          <div class="product-name">{p.name}</div>
+          <div class="product-desc">{p.desc}</div>
+          <div class="product-arrow">↗</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section" id="mission">
+  <div class="wrap">
+    <p class="section-label reveal">Our Mission</p>
+    <p class="mission-text reveal reveal-d1">
+      To build <em>powerful, accessible,</em> and intelligent technology that helps people create, learn, and innovate — <em>without limits.</em>
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <p class="section-label reveal">About BasiXa</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="about-title reveal">An independent company<br/>building for everyone.</h2>
+        <p class="about-text about-sub reveal reveal-d1">
+          BasiXa is an independent technology company founded with a singular belief: advanced technology should be available to everyone, not just those with enterprise budgets. We build across AI, creative software, and computing infrastructure.
+        </p>
+        <p class="about-text about-sub reveal reveal-d2">
+          Every product we ship — from AI automation tools to a full video editing suite to a next-generation OS — is built with the same goal: make powerful software feel effortless and accessible.
+        </p>
+        <p class="about-text reveal reveal-d2">
+          We believe software should be intelligent, fast, and open to innovation. This is the BasiXa standard.
+        </p>
+      </div>
+      <div>
+        <div class="founder-box reveal reveal-d1">
+          <div class="founder-initials">AB</div>
+          <div class="founder-name-big">Abdul Basit HS</div>
+          <div class="founder-title">Founder & CEO</div>
+          <div class="founder-divider"></div>
+          <div class="socials-label">Connect</div>
+          <div class="socials-list">
+            {socials.map(s => (
+              <a href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener" class="social-link">
+                <span class="social-icon" set:html={s.icon}></span>
+                <span>{s.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-section">
+      <div>
+        <h2 class="contact-title reveal">Get in touch.</h2>
+        <p class="contact-sub reveal reveal-d1">
+          Questions, partnerships, or just want to say hello — we'd love to hear from you.
+        </p>
+      </div>
+      <div class="reveal reveal-d2">
+        <a href="mailto:basixaofficial@gmail.com" class="contact-email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          basixaofficial@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-logo">BasiXa</span>
+      <span class="footer-copy">© 2025 BasiXa. All rights reserved.</span>
+    </div>
+    <div class="footer-socials">
+      {socials.map(s => (
+        <a href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener" class="footer-social-btn" title={s.name} set:html={s.icon}></a>
+      ))}
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  const btn = document.getElementById('themeToggle');
+  btn?.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </Layout>
